@@ -1,5 +1,5 @@
 - name1: 获取token
-  base_url: https://api.weixin.qq.com
+- base_url: https://api.weixin.qq.com
   request:
     method: get
     url: /cgi-bin/token
