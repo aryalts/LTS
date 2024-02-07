@@ -1,0 +1,2 @@
+1.必须要有四个以及关键字：name,base_url,request,validate
+2.request下必须包含method,url

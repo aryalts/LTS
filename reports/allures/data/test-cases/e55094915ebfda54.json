@@ -1,0 +1,98 @@
+{
+  "uid" : "e55094915ebfda54",
+  "name" : "用例标题：正确参数2",
+  "fullName" : "testcases.lvbu.test_lvbu.TestApi#test_lvbu1",
+  "historyId" : "74123202f410f04f6e5aa48255515a2d",
+  "time" : {
+    "start" : 1704953225396,
+    "stop" : 1704953225396,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "get_token",
+    "time" : {
+      "start" : 1704953225147,
+      "stop" : 1704953225147,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "get_token::0",
+    "time" : {
+      "start" : 1704953225411,
+      "stop" : 1704953225411,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "模块名称：吕布"
+  }, {
+    "name" : "severity",
+    "value" : "blocker"
+  }, {
+    "name" : "epic",
+    "value" : "项目名称：测试项目"
+  }, {
+    "name" : "story",
+    "value" : "接口名称：查询接口2"
+  }, {
+    "name" : "parentSuite",
+    "value" : "testcases.lvbu"
+  }, {
+    "name" : "suite",
+    "value" : "test_lvbu"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestApi"
+  }, {
+    "name" : "host",
+    "value" : "ppc20200923023"
+  }, {
+    "name" : "thread",
+    "value" : "16680-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcases.lvbu.test_lvbu"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "blocker",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e55094915ebfda54.json",
+  "parameterValues" : [ ]
+}
