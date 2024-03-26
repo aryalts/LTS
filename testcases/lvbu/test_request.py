@@ -20,21 +20,20 @@ class TestRequests:
         }
         res = RequestsUtil('base', 'base_gzh_url').send_request("GET", url=url, params=params)
         # res = requests.get(url=url, params=params)
-
         return_data = res.json()
-        print(return_data)
+
         # 把中间变量写入extract.yml文件
         extract_data = {"access_token":return_data['access_token']}
         write_extract_file(extract_data)
 
-    # def test_get3(self):
-    #     url = "/cgi-bin/tags/get"
-    #     params = {
-    #         "access_token": "{{access_token}}"
-    #     }
-    #     res = RequestsUtil('base', 'base_wx_url').send_request("GET", url=url, params=params)
-    #     # res = requests.get(url=url, params=params)
-    #     return_data = res.json()
+    def test_get3(self):
+        url = "/cgi-bin/tags/get"
+        params = {
+            "access_token": "{{access_token}}"
+        }
+        res = RequestsUtil('base', 'base_gzh_url').send_request("GET", url=url, params=params)
+        return_data = res.json()
+
     #
     # def test_post(self):
     #     url = "/cgi-bin/tags/update?access_token={{access_token}}"
