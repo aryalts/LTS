@@ -2,99 +2,21 @@
   "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
   "name" : "packages",
   "children" : [ {
-    "name" : "testcases.lvbu.test_lvbu",
+    "name" : "testcases.lvbu.test_request",
     "children" : [ {
-      "name" : "用例标题：获取token接口",
-      "uid" : "70f1ac28e3d16877",
-      "parentUid" : "0653cb85ddaa5102c2d74490bea70668",
+      "name" : "test_get2",
+      "uid" : "cfcaaec702ef26b6",
+      "parentUid" : "fde304bc6f10fa8dd8287a3c09a6a140",
       "status" : "passed",
       "time" : {
-        "start" : 1704953225148,
-        "stop" : 1704953225394,
-        "duration" : 246
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "{'name': '获取token接口', 'description': '接口描述', 'request': {'method': 'get', 'url': 'https://api.weixin.qq.com/cgi-bin/token', 'data': {'grant_type': 'client_credential', 'appid': 'wx6b11b3efd1cdc290', 'secret': '106a9c6157c4db5f6029918738f9529d'}}, 'validate': 'None'}" ]
-    }, {
-      "name" : "用例标题：正确参数2",
-      "uid" : "e55094915ebfda54",
-      "parentUid" : "0653cb85ddaa5102c2d74490bea70668",
-      "status" : "passed",
-      "time" : {
-        "start" : 1704953225396,
-        "stop" : 1704953225396,
-        "duration" : 0
+        "start" : 1711435966035,
+        "stop" : 1711435966362,
+        "duration" : 327
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
-    }, {
-      "name" : "用例标题：张飞18",
-      "uid" : "e1e7ff3ff3490c2b",
-      "parentUid" : "0653cb85ddaa5102c2d74490bea70668",
-      "status" : "passed",
-      "time" : {
-        "start" : 1704953225398,
-        "stop" : 1704953225398,
-        "duration" : 0
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "'18'", "'张飞'" ]
-    }, {
-      "name" : "用例标题：关羽17",
-      "uid" : "d2abea2b5a885bf3",
-      "parentUid" : "0653cb85ddaa5102c2d74490bea70668",
-      "status" : "passed",
-      "time" : {
-        "start" : 1704953225401,
-        "stop" : 1704953225401,
-        "duration" : 0
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "'17'", "'关羽'" ]
-    }, {
-      "name" : "用例标题：李白",
-      "uid" : "e8cf2967c2d35b60",
-      "parentUid" : "0653cb85ddaa5102c2d74490bea70668",
-      "status" : "passed",
-      "time" : {
-        "start" : 1704953225404,
-        "stop" : 1704953225404,
-        "duration" : 0
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "'李白'" ]
-    }, {
-      "name" : "用例标题：杜甫",
-      "uid" : "e39385f75434e1a",
-      "parentUid" : "0653cb85ddaa5102c2d74490bea70668",
-      "status" : "passed",
-      "time" : {
-        "start" : 1704953225407,
-        "stop" : 1704953225407,
-        "duration" : 0
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "'杜甫'" ]
-    }, {
-      "name" : "用例标题：王维",
-      "uid" : "88fd88ced982059f",
-      "parentUid" : "0653cb85ddaa5102c2d74490bea70668",
-      "status" : "passed",
-      "time" : {
-        "start" : 1704953225410,
-        "stop" : 1704953225410,
-        "duration" : 0
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "'王维'" ]
     } ],
-    "uid" : "testcases.lvbu.test_lvbu"
+    "uid" : "testcases.lvbu.test_request"
   } ]
 }

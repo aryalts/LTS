@@ -38,5 +38,5 @@ def read_testcase_file(yaml_path):
 
 if __name__ == '__main__':
     # print(read_config_file('base', 'base_wx_url'))
-    yml_path = r'\testcases\get_token.yml'
+    yml_path = r'\testcases\lvbu\get_token.yml'
     print(read_testcase_file(yml_path))

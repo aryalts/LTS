@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 import json
-
 import requests
-
 from common.yaml_util import read_config_file, read_extract_file
 
 

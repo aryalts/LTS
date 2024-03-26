@@ -1,71 +1,11 @@
 [ {
-  "uid" : "e8cf2967c2d35b60",
-  "name" : "用例标题：李白",
+  "uid" : "cfcaaec702ef26b6",
+  "name" : "test_get2",
   "time" : {
-    "start" : 1704953225404,
-    "stop" : 1704953225404,
-    "duration" : 0
+    "start" : 1711435966035,
+    "stop" : 1711435966362,
+    "duration" : 327
   },
   "status" : "passed",
-  "severity" : "blocker"
-}, {
-  "uid" : "e39385f75434e1a",
-  "name" : "用例标题：杜甫",
-  "time" : {
-    "start" : 1704953225407,
-    "stop" : 1704953225407,
-    "duration" : 0
-  },
-  "status" : "passed",
-  "severity" : "blocker"
-}, {
-  "uid" : "e55094915ebfda54",
-  "name" : "用例标题：正确参数2",
-  "time" : {
-    "start" : 1704953225396,
-    "stop" : 1704953225396,
-    "duration" : 0
-  },
-  "status" : "passed",
-  "severity" : "blocker"
-}, {
-  "uid" : "d2abea2b5a885bf3",
-  "name" : "用例标题：关羽17",
-  "time" : {
-    "start" : 1704953225401,
-    "stop" : 1704953225401,
-    "duration" : 0
-  },
-  "status" : "passed",
-  "severity" : "blocker"
-}, {
-  "uid" : "88fd88ced982059f",
-  "name" : "用例标题：王维",
-  "time" : {
-    "start" : 1704953225410,
-    "stop" : 1704953225410,
-    "duration" : 0
-  },
-  "status" : "passed",
-  "severity" : "blocker"
-}, {
-  "uid" : "70f1ac28e3d16877",
-  "name" : "用例标题：获取token接口",
-  "time" : {
-    "start" : 1704953225148,
-    "stop" : 1704953225394,
-    "duration" : 246
-  },
-  "status" : "passed",
-  "severity" : "blocker"
-}, {
-  "uid" : "e1e7ff3ff3490c2b",
-  "name" : "用例标题：张飞18",
-  "time" : {
-    "start" : 1704953225398,
-    "stop" : 1704953225398,
-    "duration" : 0
-  },
-  "status" : "passed",
-  "severity" : "blocker"
+  "severity" : "normal"
 } ]

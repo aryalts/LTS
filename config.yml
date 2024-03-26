@@ -1,3 +1,9 @@
-
 base:
-  base_wx_url: https://api.weixin.qq.com
+  base_gzh_url: https://api.weixin.qq.com
+  base_wyn_url: https://api.apiopen.top
+  base_php_url: http://47.107.116.139
+
+log:
+  log_name: logs_
+  log_level: info
+  log_format: '[%(asctime)s] % (filename)s->%(funcName)s line:%(lineno)d [level]'
