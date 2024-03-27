@@ -1,0 +1,14 @@
+- name: 编辑文件
+  base_url: https://zdp3-api.test.ztosys.com
+  request:
+    method: post
+    url: /clover-dq/dq/quality/getList
+    json: {"creator":lutishuo121,"dbType":2,"pageIndex":1,"pageSize":50}
+    headers: {
+      Content-Type: application/json,
+      Cookie: com.zto.sessionid=41edbd7015ee963e21f1259a5a8b7ff7c5145a17
+    }
+  validate:
+  - eq:
+    - status_code
+    - 200

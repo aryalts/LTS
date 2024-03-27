@@ -1,20 +1,30 @@
 [ {
-  "uid" : "584d4f98e252a0db",
-  "name" : "test_get_token[caseinfo0]",
+  "uid" : "e59a48ee58883b79",
+  "name" : "test_select_file[caseinfo0]",
   "time" : {
-    "start" : 1711524233814,
-    "stop" : 1711524234491,
-    "duration" : 677
+    "start" : 1711529378614,
+    "stop" : 1711529378719,
+    "duration" : 105
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "ae318b4a6597241a",
+  "uid" : "abd2d877c1c216c2",
+  "name" : "test_get_token[caseinfo0]",
+  "time" : {
+    "start" : 1711529377921,
+    "stop" : 1711529378360,
+    "duration" : 439
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8221715b601ed071",
   "name" : "test_upload_file[caseinfo0]",
   "time" : {
-    "start" : 1711524234495,
-    "stop" : 1711524234739,
-    "duration" : 244
+    "start" : 1711529378363,
+    "stop" : 1711529378610,
+    "duration" : 247
   },
   "status" : "passed",
   "severity" : "normal"

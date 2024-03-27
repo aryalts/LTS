@@ -1,0 +1,12 @@
+- name: 查询标签
+  base_url: https://api.weixin.qq.com
+  request:
+    method: get
+    url: /cgi-bin/tags/get?access_token
+    params:
+      access_token: "{{access_token}}"
+
+  validate:
+  - eq:
+    - status_code
+    - 200

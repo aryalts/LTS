@@ -64,22 +64,22 @@ class RequestsUtil:
     # 不管什么类型统一转成字符串
     def replace_value(self, data):
         if data and isinstance(data, dict):
-            str = json.dumps(data)
+            str_data = json.dumps(data)
         else:
-            str =data
+            str_data =data
         # 替换值
-        for i in range(str.count("{{")):
-            if "{{" in str and "}}" in str:
-                start_index = str.index("{{")
-                end_index = str.index("}}")
-                old_value = str[start_index:end_index + 2]
+        for i in range(str_data.count("{{")):
+            if "{{" in str_data and "}}" in str_data:
+                start_index = str_data.index("{{")
+                end_index = str_data.index("}}")
+                old_value = str_data[start_index:end_index + 2]
                 new_value = read_extract_file(old_value[2:-2])
-                str = str.replace(old_value, new_value)
+                str_data = str_data.replace(old_value, new_value)
         # 还原数据类型
         if data and isinstance(data, dict):
-            data = json.loads(str)
+            data = json.loads(str_data)
         else:
-            data = str
+            data = str_data
         return data
 
     # 统一请求方法
