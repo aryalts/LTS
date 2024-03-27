@@ -1,0 +1,12 @@
+- name: 上传文件
+  base_url: https://api.weixin.qq.com
+  request:
+    method: post
+    url: /cgi-bin/media/uploadimg?access_token={{access_token}}
+    files:
+      "media": "F:\\file.png"
+
+  validate:
+  - eq:
+    - status_code
+    - 200

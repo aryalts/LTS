@@ -4,35 +4,35 @@
   "children" : [ {
     "name" : "ppc20200923023",
     "children" : [ {
-      "name" : "11224-MainThread",
+      "name" : "7292-MainThread",
       "children" : [ {
-        "name" : "test_get2",
-        "uid" : "43963e350b3f9707",
-        "parentUid" : "c834dd6f11c950e9dc42bba7861fe2d5",
+        "name" : "test_get_token[caseinfo0]",
+        "uid" : "584d4f98e252a0db",
+        "parentUid" : "c5bc9c16204907f31c2028adc03818b2",
         "status" : "passed",
         "time" : {
-          "start" : 1711437879276,
-          "stop" : 1711437879553,
-          "duration" : 277
+          "start" : 1711524233814,
+          "stop" : 1711524234491,
+          "duration" : 677
         },
         "flaky" : false,
         "newFailed" : false,
-        "parameters" : [ ]
+        "parameters" : [ "{'name': '获取接口统一鉴权码access_token', 'base_url': 'https://api.weixin.qq.com', 'request': {'method': 'get', 'url': '/cgi-bin/token', 'params': {'grant_type': 'client_credential', 'appid': 'wxe5dffc3ccc684c11', 'secret': 'fda62efd5315ec2d53bd3b189e6c688f'}}, 'extract': {'access_token': 'access_token'}, 'validate': [{'eq': ['status_code', 200]}]}" ]
       }, {
-        "name" : "test_get3",
-        "uid" : "851a39fa12942212",
-        "parentUid" : "c834dd6f11c950e9dc42bba7861fe2d5",
+        "name" : "test_upload_file[caseinfo0]",
+        "uid" : "ae318b4a6597241a",
+        "parentUid" : "c5bc9c16204907f31c2028adc03818b2",
         "status" : "passed",
         "time" : {
-          "start" : 1711437879555,
-          "stop" : 1711437879611,
-          "duration" : 56
+          "start" : 1711524234495,
+          "stop" : 1711524234739,
+          "duration" : 244
         },
         "flaky" : false,
         "newFailed" : false,
-        "parameters" : [ ]
+        "parameters" : [ "{'name': '上传文件', 'base_url': 'https://api.weixin.qq.com', 'request': {'method': 'post', 'url': '/cgi-bin/media/uploadimg?access_token={{access_token}}', 'files': {'media': 'F:\\\\file.png'}}, 'validate': [{'eq': ['status_code', 200]}]}" ]
       } ],
-      "uid" : "c834dd6f11c950e9dc42bba7861fe2d5"
+      "uid" : "c5bc9c16204907f31c2028adc03818b2"
     } ],
     "uid" : "db714825b156b558f4467cd26980feb1"
   } ]

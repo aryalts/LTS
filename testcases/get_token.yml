@@ -1,12 +1,14 @@
-- name1: 获取token
+- name: 获取接口统一鉴权码access_token
   base_url: https://api.weixin.qq.com
   request:
     method: get
     url: /cgi-bin/token
     params:
       grant_type: client_credential
-      appid: wx6b11b3efd1cdc290
-      secret: 106a9c6157c4db5f6029918738f9529d
+      appid: wxe5dffc3ccc684c11
+      secret: fda62efd5315ec2d53bd3b189e6c688f
+  extract:
+    access_token: access_token
   validate:
   - eq:
     - status_code
