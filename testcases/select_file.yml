@@ -1,12 +1,12 @@
-- name: 查询标签
+- name: 获取标签接口
   base_url: https://api.weixin.qq.com
   request:
     method: get
     url: /cgi-bin/tags/get?access_token
     params:
-      access_token: "{{access_token}}"
-
+       access_token: "${get_extract_data(access_token)}"
   validate:
   - eq:
     - status_code
     - 200
+

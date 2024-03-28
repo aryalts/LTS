@@ -1,15 +1,17 @@
-- name: 获取接口统一鉴权码access_token
+- name: $csv{name}
   base_url: https://api.weixin.qq.com
+  parameters:
+    name-appid-secret-grant_type-access_str: /data/get_token.csv
   request:
     method: get
     url: /cgi-bin/token
     params:
-      grant_type: client_credential
-      appid: wxe5dffc3ccc684c11
-      secret: fda62efd5315ec2d53bd3b189e6c688f
+      appid: $csv{appid}
+      secret: $csv{secret}
+      grant_type: $csv{grant_type}
   extract:
     access_token: access_token
   validate:
-  - eq:
-    - status_code
-    - 200
+    - equals: {status_code: 200}
+    - equals: {expires_in: 7200}
+    - contains: $csv{access_srt}

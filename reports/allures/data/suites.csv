@@ -1,4 +1,2 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Wed Mar 27 16:49:38 CST 2024","Wed Mar 27 16:49:38 CST 2024","105","testcases.lvbu","test_request","TestRequests","","","test_select_file[caseinfo0]",""
-"passed","Wed Mar 27 16:49:37 CST 2024","Wed Mar 27 16:49:38 CST 2024","439","testcases.lvbu","test_request","TestRequests","","","test_get_token[caseinfo0]",""
-"passed","Wed Mar 27 16:49:38 CST 2024","Wed Mar 27 16:49:38 CST 2024","247","testcases.lvbu","test_request","TestRequests","","","test_upload_file[caseinfo0]",""
+"passed","Thu Mar 28 18:05:03 CST 2024","Thu Mar 28 18:05:03 CST 2024","1","testcases.lvbu","test_request","TestRequests","","","test_get_token[caseinfo0]",""

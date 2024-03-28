@@ -2,11 +2,9 @@
   base_url: https://api.weixin.qq.com
   request:
     method: post
-    url: /cgi-bin/media/uploadimg?access_token={{access_token}}
+    url: /cgi-bin/media/uploadimg?access_token=${get_extract_data(access_token)}
     files:
       "media": "F:\\file.png"
 
   validate:
-  - eq:
-    - status_code
-    - 200
+  - equals: {status_code: 200}

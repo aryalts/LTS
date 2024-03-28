@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import requests
 import json
+
+from common.parameters_util import read_csv_file
 from common.requests_util import RequestsUtil
 from common.yaml_util import write_extract_file, read_extract_file, read_testcase_file
 import pytest
@@ -9,44 +11,89 @@ import pytest
 class TestRequests:
     @pytest.mark.parametrize('caseinfo', read_testcase_file('/testcases/get_token.yml'))
     def test_get_token(self, caseinfo):
-        RequestsUtil('base', 'base_gzh_url').analysis_yaml(caseinfo)
+        caseinfo_keys = dict(caseinfo).keys()
+        if 'parameters' in caseinfo_keys:
+            for key,value in dict(caseinfo['parameters']).items():
+                key_list = str(key).split('-')
+                # 将字典数据转成字符串，便于后续替换
+                caseinfo_str = json.dumps(caseinfo)
 
-    @pytest.mark.parametrize('caseinfo', read_testcase_file('/testcases/upload_file.yml'))
-    def test_upload_file(self, caseinfo):
-        RequestsUtil('base', 'base_gzh_url').analysis_yaml(caseinfo)
+                # 提取csv的数据
+                csv_data_list = read_csv_file(value)
+                # csv的表头
+                one_row_csv_data = csv_data_list[0]
+                length_flag = 0
+                # 检查用例数据是否满足表头
+                for csv_data in csv_data_list:
+                    if len(csv_data) != len(one_row_csv_data):
+                        length_flag += 1
+                        break
+                # 解析
+                new_caseinfo = []
+                if length_flag:
+                    for x in range(1,len(csv_data_list)):
+                        tmp_caseinfo = caseinfo_str
+                        for y in range(0,len(csv_data_list[x])):
+                            if csv_data_list[0][y] in key_list:
+                                tmp_caseinfo=tmp_caseinfo.replace('$csv{'+csv_data_list[0][y]+'}',csv_data_list[x][y])
+                                print(tmp_caseinfo)
 
-    @pytest.mark.parametrize('caseinfo', read_testcase_file('/testcases/select_file.yml'))
-    def test_select_file(self, caseinfo):
-        RequestsUtil('base', 'base_gzh_url').analysis_yaml(caseinfo)
+                        new_caseinfo.append(json.loads(tmp_caseinfo))
+                print("--------------------")
+                print(new_caseinfo)
+
+
+
+
+
+
+
+
+
+
+        # RequestsUtil('base', 'base_gzh_url').analysis_yaml(caseinfo)
+
+    # @pytest.mark.parametrize('caseinfo', read_testcase_file('/testcases/upload_file.yml'))
+    # def test_upload_file(self, caseinfo):
+    #     RequestsUtil('base', 'base_gzh_url').analysis_yaml(caseinfo)
+    #
+    # @pytest.mark.parametrize('caseinfo', read_testcase_file('/testcases/select_file.yml'))
+    # def test_select_file(self, caseinfo):
+    #     RequestsUtil('base', 'base_gzh_url').analysis_yaml(caseinfo)
 
     # @pytest.mark.parametrize('caseinfo', read_testcase_file('/testcases/edit_file.yml'))
     # def test_edit_file(self, caseinfo):
     #     RequestsUtil('base', 'base_gzh_url').analysis_yaml(caseinfo)
 
-
+    # access_tokens = ""
     # def test_get1(self):
-    #     url = "/cgi-bin/token"
+    #     url = "https://api.weixin.qq.com/cgi-bin/token"
     #     params = {
     #         "grant_type": "client_credential",
-    #         "appid": "wxe5dffc3ccc684c11",
-    #         "secret": "fda62efd5315ec2d53bd3b189e6c688f"
+    #         "appid": "wxc0eb54861a3bc22d",
+    #         "secret": "7356c7ddc104fcdceec95f21ed267148"
     #     }
-    #     res = RequestsUtil('base', 'base_gzh_url').send_request("GET", url=url, params=params)
-    #     # res = requests.get(url=url, params=params)
+    #     # res = RequestsUtil('base', 'base_gzh_url').send_request("GET", url=url, params=params)
+    #     res = requests.get(url=url, params=params)
     #     return_data = res.json()
-        #
-        # # 把中间变量写入extract.yml文件
-        # extract_data = {"access_token":return_data['access_token']}
-        # write_extract_file(extract_data)
-
-    # def test_get2(self):
-    #     url = "/cgi-bin/tags/get?access_token"
-    #     params = {
-    #         "access_token": "{{access_token}}"
-    #     }
-    #     res = RequestsUtil('base', 'base_gzh_url').send_request(method="GET", url=url, params=params)
-    #     return_data = res.json()
+    #     TestRequests.access_tokens = return_data['access_token']
+    #     print(return_data)
     #
+    #
+    #     # 把中间变量写入extract.yml文件
+    #     # extract_data = {"access_token":res['access_token']}
+    #     # write_extract_file(extract_data)
+    #
+    # def test_get2(self):
+    #     url = "https://api.weixin.qq.com/cgi-bin/tags/get?access_token"
+    #     params = {
+    #         "access_token":TestRequests.access_tokens
+    #     }
+    #     # res = RequestsUtil('base', 'base_gzh_url').send_request(method="GET", url=url, params=params)
+    #     res = requests.get(url=url, params=params)
+    #     return_data = res.json()
+    #     print(return_data)
+
     #
     # def test_post(self):
     #     url = "/cgi-bin/tags/update?access_token={{access_token}}"
@@ -55,6 +102,15 @@ class TestRequests:
     #     }
     #
     #     res = RequestsUtil('base', 'base_gzh_url').send_request(method="post", url=url, json=data)
+    #     return_data = res.json()
+
+    # def test_analysis(self):
+    #     url = "/api/model/home/tree"
+    #     data = {
+    #         "tag": {"id": 21769, "name": "厦门1703575579282"}
+    #     }
+    #
+    #     res = RequestsUtil('base', 'base_php_url').send_request(method="get", url=url, json=data)
     #     return_data = res.json()
 
 
