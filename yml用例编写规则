@@ -1,2 +1,3 @@
-1.必须要有四个一级关键字：name,base_url,request,validate
+1.必须要有一级关键字：name,request,validate
 2.request下必须包含method,url
+3.如果需要接口关联使用一级关键字：extract

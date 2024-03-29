@@ -9,57 +9,17 @@ import pytest
 
 
 class TestRequests:
-    @pytest.mark.parametrize('caseinfo', read_testcase_file('/testcases/get_token.yml'))
-    def test_get_token(self, caseinfo):
-        caseinfo_keys = dict(caseinfo).keys()
-        if 'parameters' in caseinfo_keys:
-            for key,value in dict(caseinfo['parameters']).items():
-                key_list = str(key).split('-')
-                # 将字典数据转成字符串，便于后续替换
-                caseinfo_str = json.dumps(caseinfo)
-
-                # 提取csv的数据
-                csv_data_list = read_csv_file(value)
-                # csv的表头
-                one_row_csv_data = csv_data_list[0]
-                length_flag = 0
-                # 检查用例数据是否满足表头
-                for csv_data in csv_data_list:
-                    if len(csv_data) != len(one_row_csv_data):
-                        length_flag += 1
-                        break
-                # 解析
-                new_caseinfo = []
-                if length_flag:
-                    for x in range(1,len(csv_data_list)):
-                        tmp_caseinfo = caseinfo_str
-                        for y in range(0,len(csv_data_list[x])):
-                            if csv_data_list[0][y] in key_list:
-                                tmp_caseinfo=tmp_caseinfo.replace('$csv{'+csv_data_list[0][y]+'}',csv_data_list[x][y])
-                                print(tmp_caseinfo)
-
-                        new_caseinfo.append(json.loads(tmp_caseinfo))
-                print("--------------------")
-                print(new_caseinfo)
-
-
-
-
-
-
-
-
-
-
-        # RequestsUtil('base', 'base_gzh_url').analysis_yaml(caseinfo)
+    # @pytest.mark.parametrize('caseinfo', read_testcase_file('/testcases/get_token.yml'))
+    # def test_get_token(self, caseinfo)
+    #     RequestsUtil('base', 'base_gzh_url').analysis_yaml(caseinfo)
 
     # @pytest.mark.parametrize('caseinfo', read_testcase_file('/testcases/upload_file.yml'))
     # def test_upload_file(self, caseinfo):
     #     RequestsUtil('base', 'base_gzh_url').analysis_yaml(caseinfo)
     #
-    # @pytest.mark.parametrize('caseinfo', read_testcase_file('/testcases/select_file.yml'))
-    # def test_select_file(self, caseinfo):
-    #     RequestsUtil('base', 'base_gzh_url').analysis_yaml(caseinfo)
+    @pytest.mark.parametrize('caseinfo', read_testcase_file('/testcases/batchUpdateRuleConfigStatus.yml'))
+    def test_select_file(self, caseinfo):
+        RequestsUtil('base', 'base_jk_url').analysis_yaml(caseinfo)
 
     # @pytest.mark.parametrize('caseinfo', read_testcase_file('/testcases/edit_file.yml'))
     # def test_edit_file(self, caseinfo):

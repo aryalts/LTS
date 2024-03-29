@@ -1,7 +1,7 @@
 base:
   base_gzh_url: https://api.weixin.qq.com
   base_wyn_url: https://api.apiopen.top
-  base_php_url: https://analysis-api.test.ztosys.com
+  base_jk_url: https://zdp3-api.test.ztosys.com
 
 log:
   log_name: logs_

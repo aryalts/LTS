@@ -8,18 +8,18 @@
       "children" : [ {
         "name" : "TestRequests",
         "children" : [ {
-          "name" : "test_get_token[caseinfo0]",
-          "uid" : "e6b96fff8cdd0d86",
+          "name" : "test_select_file[caseinfo0]",
+          "uid" : "e966fa9f0d40531",
           "parentUid" : "2e42fb6a296068f845ca4e4ff623e686",
-          "status" : "passed",
+          "status" : "broken",
           "time" : {
-            "start" : 1711620303409,
-            "stop" : 1711620303410,
-            "duration" : 1
+            "start" : 1711703763320,
+            "stop" : 1711703764038,
+            "duration" : 718
           },
           "flaky" : false,
           "newFailed" : false,
-          "parameters" : [ "{'name': '$csv{name}', 'base_url': 'https://api.weixin.qq.com', 'parameters': {'name-appid-secret-grant_type-access_str': '/data/get_token.csv'}, 'request': {'method': 'get', 'url': '/cgi-bin/token', 'params': {'appid': '$csv{appid}', 'secret': '$csv{secret}', 'grant_type': '$csv{grant_type}'}}, 'extract': {'access_token': 'access_token'}, 'validate': [{'equals': {'status_code': 200}}, {'equals': {'expires_in': 7200}}, {'contains': '$csv{access_srt}'}]}" ]
+          "parameters" : [ "{'name': '打开规则实例开关-任务失败', 'request': {'method': 'post', 'url': '/config-service/ruleconfig/batchUpdateRuleConfigStatus', 'json': {'ids': [96], 'status': 2}, 'headers': {'Content-Type': 'application/json', 'Cookie': 'wyandyy=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTE3NDI0MDAsImlhdCI6MTcxMTY3NzI3MSwiaXNzIjoiY29tLnp0by5jb25uZWN0IiwibmJmIjoxNzExNjc3MjcxLCJzZXNzaW9uaWQiOiIzOTBmMjRkZjc1YzA5ZmRmMDFlYWY4MDc0Nzk4N2RiMTZjMGYzMmQwfDE3MTE2NzcyNzEiLCJ1dWlkIjoiSURNemt1UU9VV2VWd0FzTnNuMVowZyJ9.Oz_Q2Xo1Yvp-7MDU-fxeTiZGFNQmifq6VVWe9E8nvvNVUppsKo3lxeOeo4lr2oDXaERI6Efs3k34obLdFd5sQttwN_LJ3JZJXSis9rdjLWgjA0HlSZ5wgVVMb1if6rz2gnxV9ebr6DRS7FDFIu451rAq2Gf6IWTddJWgF80s8zJbG8uUP1MauGIztPyHxNobbVOHrXmfChdWHCugk0y4frjAs3rVVdilGBbcR5J6oC2KoaoSFgE6FKsWJg8zWvp46blxtrine5MFIEnIFggj62G611UPrPTVJ8gAHOKSi3w0evDl8zHtaLMR2uurTxP6n11ZK6EJQTmG1O12IEMGlQ'}}, 'validate': [{'equals': {'status_code': 200}}, {'contains': '正常'}]}" ]
         } ],
         "uid" : "2e42fb6a296068f845ca4e4ff623e686"
       } ],

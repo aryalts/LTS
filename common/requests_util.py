@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 import json
 import re
 
@@ -18,10 +19,10 @@ class RequestsUtil:
 
     # 分析yaml用例是否符合规范
     def analysis_yaml(self, caseinfo):
-        # 1.必须要有四个一级关键字：name, base_url, request, validate
+        # 1.必须要有一级关键字：name,  request, validate
         caseinfo_keys = dict(caseinfo).keys()
-        if 'name' in caseinfo_keys and 'base_url' in caseinfo_keys and 'request' in caseinfo_keys and 'validate' in caseinfo_keys:
-            # 2.request下必须包含两个二级关键字：method, url
+        if 'name' in caseinfo_keys and 'request' in caseinfo_keys and 'validate' in caseinfo_keys:
+            # 2.request下必须包含二级关键字：method, url
             request_keys = dict(caseinfo['request']).keys()
             if 'method' in request_keys and 'url' in request_keys:
                 # 参数（data，jason，params），请求头，文件上传不能约束
@@ -32,6 +33,7 @@ class RequestsUtil:
                 headers = None
                 if jsonpath.jsonpath(caseinfo, '$..headers'):
                     headers = caseinfo["request"]["headers"]
+
                     del caseinfo["request"]["headers"]
                 files = None
                 if jsonpath.jsonpath(caseinfo, '$..files'):
@@ -41,10 +43,11 @@ class RequestsUtil:
                     del caseinfo["request"]["files"]
                 # 将caseinfo["request"]剩下的值当作参数，传给kwargs
                 res = self.send_request(method=method, url=url, headers=headers, files=files, **caseinfo["request"])
+
                 return_data = res.json()
                 return_text = res.text
                 status_code = res.status_code
-                # print(return_data)
+                print(return_data)
                 # 提取接口关联的变量，支持正则和json提取
                 if 'extract' in caseinfo_keys:
                     for key,value in dict(caseinfo['extract']).items():
@@ -61,9 +64,9 @@ class RequestsUtil:
                 self.validate_result(yq_result, return_data, status_code)
 
             else:
-                print("request下必须包含两个二级关键字：method, url")
+                print("request下必须包含二级关键字：method, url")
         else:
-            print('必须要有四个一级关键字：name, base_url, request, validate')
+            print('必须要有的一级关键字：name, request, validate')
 
     # 统一替换方法，替换的值是字符串、字典
     # 不管什么类型统一转成字符串
@@ -148,12 +151,14 @@ class RequestsUtil:
                 for key,value in dict(yq).items():
                     if key == 'equals':
                         for assert_key,assert_value in dict(value).items():
+
                             if assert_key == "status_code":
                                 if status_code != assert_value:
                                     flag += 1
                                     print("断言失败："+assert_key+"不等于"+str(assert_value)+"")
                             else:
                                 key_list = jsonpath.jsonpath(sj_result,'$..%s'%assert_key)
+
                                 if key_list:
                                     if assert_value not in key_list:
                                         flag += 1
@@ -162,6 +167,10 @@ class RequestsUtil:
                                     flag += 1
                                     print("断言失败，返回结果不存在："+assert_key+"")
                     elif key == 'contains':
+                        # python3 dumps默认转成unicode编码，需要处理
+                        print('+++++++++www++++++++' + json.dumps(sj_result,ensure_ascii=False))
+                        print('+++++++++xxx++++++++' + sj_result)
+
                         if value not in json.dumps(sj_result):
                             flag += 1
                             print("断言失败，返回结果不存在："+value+"")
@@ -171,21 +180,19 @@ class RequestsUtil:
         assert flag == 0
 
 
-
-
-
-
-
-
-
 if __name__ == '__main__':
-    url = "/cgi-bin/tags/update?access_token={{access_token}}&aa={{www}}"
-    for i in range(url.count("{{")):
-        if "{{" in url and "}}" in url:
-            start_index = url.index("{{")
-            end_index = url.index("}}")
-            old_value = url[start_index:end_index+2]
-            new_value = read_extract_file(old_value[2:-2])
-            url = url.replace(old_value, new_value)
-            print(url)
+    dic = {"result": 0, "message": "正常", "errorCode": "200000", "returnObj": "正常"}
+    a = '正常'
+
+    if a in json.dumps(dic):
+        print("ok")
+    # url = "/cgi-bin/tags/update?access_token={{access_token}}&aa={{www}}"
+    # for i in range(url.count("{{")):
+    #     if "{{" in url and "}}" in url:
+    #         start_index = url.index("{{")
+    #         end_index = url.index("}}")
+    #         old_value = url[start_index:end_index+2]
+    #         new_value = read_extract_file(old_value[2:-2])
+    #         url = url.replace(old_value, new_value)
+    #         print(url)
 

@@ -1,11 +1,11 @@
 [ {
-  "uid" : "e6b96fff8cdd0d86",
-  "name" : "test_get_token[caseinfo0]",
+  "uid" : "e966fa9f0d40531",
+  "name" : "test_select_file[caseinfo0]",
   "time" : {
-    "start" : 1711620303409,
-    "stop" : 1711620303410,
-    "duration" : 1
+    "start" : 1711703763320,
+    "stop" : 1711703764038,
+    "duration" : 718
   },
-  "status" : "passed",
+  "status" : "broken",
   "severity" : "normal"
 } ]
