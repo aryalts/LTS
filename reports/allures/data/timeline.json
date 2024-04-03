@@ -4,22 +4,48 @@
   "children" : [ {
     "name" : "ppc20200923023",
     "children" : [ {
-      "name" : "25920-MainThread",
+      "name" : "20736-MainThread",
       "children" : [ {
         "name" : "test_select_file[caseinfo0]",
-        "uid" : "e966fa9f0d40531",
-        "parentUid" : "e2cf31cd0b6f688f88d98730b4101f9b",
-        "status" : "broken",
+        "uid" : "70d1bd018b839e48",
+        "parentUid" : "197224415c78a27de87c18c9ea19da51",
+        "status" : "passed",
         "time" : {
-          "start" : 1711703763320,
-          "stop" : 1711703764038,
-          "duration" : 718
+          "start" : 1712131919153,
+          "stop" : 1712131919553,
+          "duration" : 400
         },
         "flaky" : false,
         "newFailed" : false,
-        "parameters" : [ "{'name': '打开规则实例开关-任务失败', 'request': {'method': 'post', 'url': '/config-service/ruleconfig/batchUpdateRuleConfigStatus', 'json': {'ids': [96], 'status': 2}, 'headers': {'Content-Type': 'application/json', 'Cookie': 'wyandyy=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTE3NDI0MDAsImlhdCI6MTcxMTY3NzI3MSwiaXNzIjoiY29tLnp0by5jb25uZWN0IiwibmJmIjoxNzExNjc3MjcxLCJzZXNzaW9uaWQiOiIzOTBmMjRkZjc1YzA5ZmRmMDFlYWY4MDc0Nzk4N2RiMTZjMGYzMmQwfDE3MTE2NzcyNzEiLCJ1dWlkIjoiSURNemt1UU9VV2VWd0FzTnNuMVowZyJ9.Oz_Q2Xo1Yvp-7MDU-fxeTiZGFNQmifq6VVWe9E8nvvNVUppsKo3lxeOeo4lr2oDXaERI6Efs3k34obLdFd5sQttwN_LJ3JZJXSis9rdjLWgjA0HlSZ5wgVVMb1if6rz2gnxV9ebr6DRS7FDFIu451rAq2Gf6IWTddJWgF80s8zJbG8uUP1MauGIztPyHxNobbVOHrXmfChdWHCugk0y4frjAs3rVVdilGBbcR5J6oC2KoaoSFgE6FKsWJg8zWvp46blxtrine5MFIEnIFggj62G611UPrPTVJ8gAHOKSi3w0evDl8zHtaLMR2uurTxP6n11ZK6EJQTmG1O12IEMGlQ'}}, 'validate': [{'equals': {'status_code': 200}}, {'contains': '正常'}]}" ]
+        "parameters" : [ "{'name': '打开规则实例开关-任务失败', 'request': {'method': 'post', 'url': '/config-service/ruleconfig/batchUpdateRuleConfigStatus', 'json': {'ids': [96], 'status': 2}, 'headers': {'Content-Type': 'application/json', 'Cookie': 'wyandyy=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTIxNzQ0MDAsImlhdCI6MTcxMjExMDIyMywiaXNzIjoiY29tLnp0by5jb25uZWN0IiwibmJmIjoxNzEyMTEwMjIzLCJzZXNzaW9uaWQiOiI0MWVkYmQ3MDE1ZWU5NjNlMjFmMTI1OWE1YThiN2ZmN2M1MTQ1YTE3fDE3MTIxMTAyMjMiLCJ1dWlkIjoiSURNemt1UU9VV2VWd0FzTnNuMVowZyJ9.lc80kxwlEC1NBnqOtH5XMXzi79Cqta377_EDROhlnnmCy9mq6Qm6ErNpk-13O7bh9xg1MHOJuXJ-gsoQBH_XDv6RAb70kkMHJ3y_A_CzLNthPIuwwOnt8J7ndIFt7SI4v7j3H8BuoTlKZFbsMrKd-SaRS4MSg8-2uCc8jMm6EJeqfHNZa7qOZAxJCcq8a5CLXgvMkJo55a1SUUqdZlvnrGkzfwXckWuCOo5vrnHDvfarSTGL6Ys9UX0ZYS6JkgceJCo28mvzdWCKesG_K5LtFI28dOQFa8dhmZ0LPIeJY0EPYRf4cYB41-UMKre2ZNG_MGHqE53MFOjNHApXxM1ilg'}}, 'validate': [{'equals': {'status_code': 200}}]}" ]
+      }, {
+        "name" : "test_select_file[caseinfo2]",
+        "uid" : "7e07e00884c2dad5",
+        "parentUid" : "197224415c78a27de87c18c9ea19da51",
+        "status" : "passed",
+        "time" : {
+          "start" : 1712131919914,
+          "stop" : 1712131919987,
+          "duration" : 73
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'name': '查看事件日志', 'request': {'method': 'get', 'url': '/alarm-service/event/getEventDetailLogs?eventLogId=${get_extract_data(eventId)}&page=1&rows=50', 'headers': {'Content-Type': 'application/json', 'Cookie': 'wyandyy=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTIxNzQ0MDAsImlhdCI6MTcxMjExMDIyMywiaXNzIjoiY29tLnp0by5jb25uZWN0IiwibmJmIjoxNzEyMTEwMjIzLCJzZXNzaW9uaWQiOiI0MWVkYmQ3MDE1ZWU5NjNlMjFmMTI1OWE1YThiN2ZmN2M1MTQ1YTE3fDE3MTIxMTAyMjMiLCJ1dWlkIjoiSURNemt1UU9VV2VWd0FzTnNuMVowZyJ9.lc80kxwlEC1NBnqOtH5XMXzi79Cqta377_EDROhlnnmCy9mq6Qm6ErNpk-13O7bh9xg1MHOJuXJ-gsoQBH_XDv6RAb70kkMHJ3y_A_CzLNthPIuwwOnt8J7ndIFt7SI4v7j3H8BuoTlKZFbsMrKd-SaRS4MSg8-2uCc8jMm6EJeqfHNZa7qOZAxJCcq8a5CLXgvMkJo55a1SUUqdZlvnrGkzfwXckWuCOo5vrnHDvfarSTGL6Ys9UX0ZYS6JkgceJCo28mvzdWCKesG_K5LtFI28dOQFa8dhmZ0LPIeJY0EPYRf4cYB41-UMKre2ZNG_MGHqE53MFOjNHApXxM1ilg'}}, 'validate': [{'equals': {'status_code': 200}}]}" ]
+      }, {
+        "name" : "test_select_file[caseinfo1]",
+        "uid" : "63edc18cdd7c5a18",
+        "parentUid" : "197224415c78a27de87c18c9ea19da51",
+        "status" : "passed",
+        "time" : {
+          "start" : 1712131919557,
+          "stop" : 1712131919903,
+          "duration" : 346
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'name': '获取事件id', 'request': {'method': 'post', 'url': '/alarm-service/event/getEventlogs', 'headers': {'Content-Type': 'application/json', 'Cookie': 'wyandyy=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTIxNzQ0MDAsImlhdCI6MTcxMjExMDIyMywiaXNzIjoiY29tLnp0by5jb25uZWN0IiwibmJmIjoxNzEyMTEwMjIzLCJzZXNzaW9uaWQiOiI0MWVkYmQ3MDE1ZWU5NjNlMjFmMTI1OWE1YThiN2ZmN2M1MTQ1YTE3fDE3MTIxMTAyMjMiLCJ1dWlkIjoiSURNemt1UU9VV2VWd0FzTnNuMVowZyJ9.lc80kxwlEC1NBnqOtH5XMXzi79Cqta377_EDROhlnnmCy9mq6Qm6ErNpk-13O7bh9xg1MHOJuXJ-gsoQBH_XDv6RAb70kkMHJ3y_A_CzLNthPIuwwOnt8J7ndIFt7SI4v7j3H8BuoTlKZFbsMrKd-SaRS4MSg8-2uCc8jMm6EJeqfHNZa7qOZAxJCcq8a5CLXgvMkJo55a1SUUqdZlvnrGkzfwXckWuCOo5vrnHDvfarSTGL6Ys9UX0ZYS6JkgceJCo28mvzdWCKesG_K5LtFI28dOQFa8dhmZ0LPIeJY0EPYRf4cYB41-UMKre2ZNG_MGHqE53MFOjNHApXxM1ilg'}, 'json': {'buCode': None, 'currentLevels': None, 'custKey': None, 'order': 'desc', 'owner': None, 'actionName': 'fkfb_t_fkfb_s', 'page': 1, 'systemCode': None, 'ruleConfigId': None, 'ruleTypeId': None, 'sort': 'gmtCurrentLevel', 'rows': 50, 'endTime': '2024-04-04 00:00:00', 'startTime': '2024-04-01 00:00:00'}}, 'extract': {'eventId': 'id'}, 'validate': [{'equals': {'status_code': 200}}]}" ]
       } ],
-      "uid" : "e2cf31cd0b6f688f88d98730b4101f9b"
+      "uid" : "197224415c78a27de87c18c9ea19da51"
     } ],
     "uid" : "db714825b156b558f4467cd26980feb1"
   } ]

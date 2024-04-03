@@ -1,0 +1,39 @@
+# -*- coding: utf-8 -*-
+- name: 打开规则实例开关-任务失败
+  request:
+    method: post
+    url: /config-service/ruleconfig/batchUpdateRuleConfigStatus
+    json: {"ids":[96],"status":2}
+
+    headers: {
+      Content-Type: application/json,
+      Cookie: wyandyy=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTIxNzQ0MDAsImlhdCI6MTcxMjExMDIyMywiaXNzIjoiY29tLnp0by5jb25uZWN0IiwibmJmIjoxNzEyMTEwMjIzLCJzZXNzaW9uaWQiOiI0MWVkYmQ3MDE1ZWU5NjNlMjFmMTI1OWE1YThiN2ZmN2M1MTQ1YTE3fDE3MTIxMTAyMjMiLCJ1dWlkIjoiSURNemt1UU9VV2VWd0FzTnNuMVowZyJ9.lc80kxwlEC1NBnqOtH5XMXzi79Cqta377_EDROhlnnmCy9mq6Qm6ErNpk-13O7bh9xg1MHOJuXJ-gsoQBH_XDv6RAb70kkMHJ3y_A_CzLNthPIuwwOnt8J7ndIFt7SI4v7j3H8BuoTlKZFbsMrKd-SaRS4MSg8-2uCc8jMm6EJeqfHNZa7qOZAxJCcq8a5CLXgvMkJo55a1SUUqdZlvnrGkzfwXckWuCOo5vrnHDvfarSTGL6Ys9UX0ZYS6JkgceJCo28mvzdWCKesG_K5LtFI28dOQFa8dhmZ0LPIeJY0EPYRf4cYB41-UMKre2ZNG_MGHqE53MFOjNHApXxM1ilg
+    }
+  validate:
+    - equals: {status_code: 200}
+
+- name: 获取事件id
+  request:
+    method: post
+    url: /alarm-service/event/getEventlogs
+    headers: {
+      Content-Type: application/json,
+      Cookie: wyandyy=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTIxNzQ0MDAsImlhdCI6MTcxMjExMDIyMywiaXNzIjoiY29tLnp0by5jb25uZWN0IiwibmJmIjoxNzEyMTEwMjIzLCJzZXNzaW9uaWQiOiI0MWVkYmQ3MDE1ZWU5NjNlMjFmMTI1OWE1YThiN2ZmN2M1MTQ1YTE3fDE3MTIxMTAyMjMiLCJ1dWlkIjoiSURNemt1UU9VV2VWd0FzTnNuMVowZyJ9.lc80kxwlEC1NBnqOtH5XMXzi79Cqta377_EDROhlnnmCy9mq6Qm6ErNpk-13O7bh9xg1MHOJuXJ-gsoQBH_XDv6RAb70kkMHJ3y_A_CzLNthPIuwwOnt8J7ndIFt7SI4v7j3H8BuoTlKZFbsMrKd-SaRS4MSg8-2uCc8jMm6EJeqfHNZa7qOZAxJCcq8a5CLXgvMkJo55a1SUUqdZlvnrGkzfwXckWuCOo5vrnHDvfarSTGL6Ys9UX0ZYS6JkgceJCo28mvzdWCKesG_K5LtFI28dOQFa8dhmZ0LPIeJY0EPYRf4cYB41-UMKre2ZNG_MGHqE53MFOjNHApXxM1ilg
+    }
+    json: {"buCode":null,"currentLevels":null,"custKey":null,"order":"desc","owner":null,"actionName":"fkfb_t_fkfb_s","page":1,"systemCode":null,"ruleConfigId":null,"ruleTypeId":null,"sort":"gmtCurrentLevel","rows":50,"endTime":"2024-04-04 00:00:00","startTime":"2024-04-01 00:00:00"}
+  extract:
+    eventId: id
+  validate:
+    - equals: {status_code: 200}
+
+
+- name: 查看事件日志
+  request:
+    method: get
+    url: /alarm-service/event/getEventDetailLogs?eventLogId=${get_extract_data(eventId)}&page=1&rows=50
+    headers: {
+      Content-Type: application/json,
+      Cookie: wyandyy=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTIxNzQ0MDAsImlhdCI6MTcxMjExMDIyMywiaXNzIjoiY29tLnp0by5jb25uZWN0IiwibmJmIjoxNzEyMTEwMjIzLCJzZXNzaW9uaWQiOiI0MWVkYmQ3MDE1ZWU5NjNlMjFmMTI1OWE1YThiN2ZmN2M1MTQ1YTE3fDE3MTIxMTAyMjMiLCJ1dWlkIjoiSURNemt1UU9VV2VWd0FzTnNuMVowZyJ9.lc80kxwlEC1NBnqOtH5XMXzi79Cqta377_EDROhlnnmCy9mq6Qm6ErNpk-13O7bh9xg1MHOJuXJ-gsoQBH_XDv6RAb70kkMHJ3y_A_CzLNthPIuwwOnt8J7ndIFt7SI4v7j3H8BuoTlKZFbsMrKd-SaRS4MSg8-2uCc8jMm6EJeqfHNZa7qOZAxJCcq8a5CLXgvMkJo55a1SUUqdZlvnrGkzfwXckWuCOo5vrnHDvfarSTGL6Ys9UX0ZYS6JkgceJCo28mvzdWCKesG_K5LtFI28dOQFa8dhmZ0LPIeJY0EPYRf4cYB41-UMKre2ZNG_MGHqE53MFOjNHApXxM1ilg
+    }
+  validate:
+    - equals: {status_code: 200}

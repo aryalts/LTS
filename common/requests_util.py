@@ -57,7 +57,7 @@ class RequestsUtil:
                                 extract_data = {key:re_value.group(1)}
                                 write_extract_file(extract_data)
                         else:
-                            extract_data = {key:return_data[value]}
+                            extract_data = {key:return_data["returnObj"]["rows"][0][value]}
                             write_extract_file(extract_data)
                 # 断言封装
                 yq_result = caseinfo['validate']
@@ -122,7 +122,7 @@ class RequestsUtil:
         self.last_method = str(method).lower()
         # 处理请求路径
         self.base_url = self.base_url + self.replace_load(url)
-        # print(self.base_url)
+        print(self.base_url)
         # 处理请求头
         if headers and isinstance(headers, dict):
             self.last_headers = self.replace_load(headers)

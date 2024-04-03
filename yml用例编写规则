@@ -1,3 +1,8 @@
 1.必须要有一级关键字：name,request,validate
 2.request下必须包含method,url
 3.如果需要接口关联使用一级关键字：extract
+
+
+yml增加前置判断
+增加contains断言
+增加cookie工具类

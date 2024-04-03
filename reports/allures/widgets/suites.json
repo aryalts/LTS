@@ -1,15 +1,15 @@
 {
   "total" : 1,
   "items" : [ {
-    "uid" : "cd44e47c41af786033d395ac5189dff8",
-    "name" : "testcases.lvbu",
+    "uid" : "308a921286b0820c23491bf5b68ebfa1",
+    "name" : "testcases.task_failure",
     "statistic" : {
       "failed" : 0,
-      "broken" : 1,
+      "broken" : 0,
       "skipped" : 0,
-      "passed" : 0,
+      "passed" : 3,
       "unknown" : 0,
-      "total" : 1
+      "total" : 3
     }
   } ]
 }

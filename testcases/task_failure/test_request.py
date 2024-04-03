@@ -9,6 +9,19 @@ import pytest
 
 
 class TestRequests:
+
+    # @pytest.mark.parametrize('caseinfo', read_testcase_file('/testcases/task_failure/batchUpdateRuleConfigStatus.yml'))
+    # def test_select_file(self, caseinfo):
+    #     RequestsUtil('base', 'base_jk_url').analysis_yaml(caseinfo)
+
+    @pytest.mark.parametrize('caseinfo', read_testcase_file('/testcases/task_failure/getEventlogs.yml'))
+    def test_select_file(self, caseinfo):
+        RequestsUtil('base', 'base_jk_url').analysis_yaml(caseinfo)
+
+    # @pytest.mark.parametrize('caseinfo', read_testcase_file('/testcases/task_failure/getEventDetailLogs.yml'))
+    # def test_select_file(self, caseinfo):
+    #     RequestsUtil('base', 'base_jk_url').analysis_yaml(caseinfo)
+
     # @pytest.mark.parametrize('caseinfo', read_testcase_file('/testcases/get_token.yml'))
     # def test_get_token(self, caseinfo)
     #     RequestsUtil('base', 'base_gzh_url').analysis_yaml(caseinfo)
@@ -16,11 +29,6 @@ class TestRequests:
     # @pytest.mark.parametrize('caseinfo', read_testcase_file('/testcases/upload_file.yml'))
     # def test_upload_file(self, caseinfo):
     #     RequestsUtil('base', 'base_gzh_url').analysis_yaml(caseinfo)
-    #
-    @pytest.mark.parametrize('caseinfo', read_testcase_file('/testcases/batchUpdateRuleConfigStatus.yml'))
-    def test_select_file(self, caseinfo):
-        RequestsUtil('base', 'base_jk_url').analysis_yaml(caseinfo)
-
     # @pytest.mark.parametrize('caseinfo', read_testcase_file('/testcases/edit_file.yml'))
     # def test_edit_file(self, caseinfo):
     #     RequestsUtil('base', 'base_gzh_url').analysis_yaml(caseinfo)
